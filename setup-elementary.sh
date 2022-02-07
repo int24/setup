@@ -27,6 +27,20 @@ echo \
 sudo apt -y update
 sudo apt -y install docker-ce docker-ce-cli containerd.io
 
+# install google cloud sdk
+
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+sudo apt -y update
+sudo apt -y install google-cloud-sdk
+
+# install kubectl
+
+sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo apt -y update
+sudo apt -y install kubectl
+
 # install downloaded packages
 
 cd ~/Downloads
