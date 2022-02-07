@@ -49,7 +49,8 @@ sudo apt -y install ./chrome.deb ./code.deb ./discord.deb
 
 # install correct nvidia driver
 
-sudo apt -y install nvidia-driver-470 nvidia-settings
+sudo apt -y install nvidia-driver-510 nvidia-settings
+sudo prime-select nvidia
 
 # install oh-my-zsh
 
