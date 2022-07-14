@@ -30,9 +30,9 @@ sudo apt -y install docker-ce docker-ce-cli containerd.io
 
 # setup docker permissions
 
-sudo groupadd docker
+# sudo groupadd docker
 sudo usermod -aG docker $USER
-newgrp docker
+# newgrp docker
 
 # install google cloud sdk
 
