@@ -52,9 +52,14 @@ newgrp docker
 
 sudo apt -y autoremove
 
-# install downloaded packages
+# install other packages
 
 cd ~/Downloads
+
+wget -O discord.deb "https://discord.com/api/download?platform=linux&format=deb"
+wget -O 1password.deb "https://downloads.1password.com/linux/debian/amd64/stable/1password-latest.deb"
+wget -O chrome.deb "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+wget -O code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 
 sudo apt -y install ./chrome.deb ./code.deb ./discord.deb ./1password.deb
 
