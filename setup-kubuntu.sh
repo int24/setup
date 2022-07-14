@@ -1,4 +1,4 @@
-# update system
+ # update system
 
 sudo apt -y update
 sudo apt -y upgrade
@@ -45,11 +45,11 @@ sudo apt -y install kubectl
 
 cd ~/Downloads
 
-sudo apt -y install ./chrome.deb ./code.deb ./discord.deb
+sudo apt -y install ./chrome.deb ./code.deb ./discord.deb ./1password.deb
 
 # install correct nvidia driver
 
-sudo apt -y install nvidia-driver-510 nvidia-settings
+sudo apt -y install nvidia-driver-515 nvidia-settings
 sudo prime-select nvidia
 
 # install oh-my-zsh
