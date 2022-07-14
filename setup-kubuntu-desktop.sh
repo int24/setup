@@ -1,4 +1,5 @@
- # update system
+ 
+# update system
 
 sudo apt -y update
 sudo apt -y upgrade
@@ -6,7 +7,7 @@ sudo apt -y upgrade
 # install tools and utils
 
 sudo apt -y install apt-transport-https ca-certificates lsb-release gnupg
-sudo apt -y install vim gimp git htop wget curl build-essential zsh ffmpeg
+sudo apt -y install vim gimp git htop wget curl build-essential zsh ffmpeg automake autoconf gnome-keyring
 
 # install nodejs
 
@@ -27,19 +28,29 @@ echo \
 sudo apt -y update
 sudo apt -y install docker-ce docker-ce-cli containerd.io
 
+# setup docker permissions
+
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+
 # install google cloud sdk
 
-echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
-sudo apt -y update
-sudo apt -y install google-cloud-sdk
+# echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+# curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+# sudo apt -y update
+# sudo apt -y install google-cloud-sdk
 
 # install kubectl
 
-sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
-echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
-sudo apt -y update
-sudo apt -y install kubectl
+# sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+# echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+# sudo apt -y update
+# sudo apt -y install kubectl
+
+# autoremove packages
+
+sudo apt -y autoremove
 
 # install downloaded packages
 
